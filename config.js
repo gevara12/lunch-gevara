@@ -12,11 +12,15 @@ config = {
     // Configure your URL and mail settings here
     production: {
         url: 'https://alext-blog.herokuapp.com/',
-        mail: {},
+        mail: 'alexander.tantsyra@gmail.com',
         database: {
             client: 'sqlite3',
             connection: {
-                filename: path.join(__dirname, '/content/data/ghost.db')
+                host: 'ec2-54-247-177-33.eu-west-1.compute.amazonaws.com',
+                user: 'fldttygkduswgn',
+                password: 'f147e36fc97b94b482b0eb34a826f00c540c0bc92259e57ffe7ff805a73f3166',
+                database: 'dfbit7ted897n1',
+                port: '5432'
             },
             debug: false
         },

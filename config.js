@@ -14,7 +14,7 @@ config = {
         url: 'https://alext-blog.herokuapp.com/',
         mail: 'alexander.tantsyra@gmail.com',
         database: {
-            client: 'sqlite3',
+            client: 'postgres',
             connection: {
                 host: 'ec2-54-247-177-33.eu-west-1.compute.amazonaws.com',
                 user: 'fldttygkduswgn',

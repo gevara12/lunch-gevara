@@ -11,7 +11,8 @@ config = {
     // When running Ghost in the wild, use the production environment.
     // Configure your URL and mail settings here
     production: {
-        url: 'https://alext-blog.herokuapp.com/',
+        url: 'https://alext-blog.herokuapp.com',
+        fileStorage: false,
         mail: 'alexander.tantsyra@gmail.com',
         database: {
             client: 'postgres',

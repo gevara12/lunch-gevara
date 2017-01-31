@@ -1,5 +1,6 @@
 /node_modules
 /.idea
 /content/**/*.map
-#/content/data/
+/content/themes/suctom-theme/assets/css/small.css
+/content/data/
 #/content/themes/casper/*

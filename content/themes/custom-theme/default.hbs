@@ -24,17 +24,7 @@
                 return t?d=t:(r=(f.body||f.getElementsByTagName("head")[0]).childNodes,d=r[r.length-1]),a=f.styleSheets,s.rel="stylesheet",s.href=n,s.media="only x",i(function(){d.parentNode.insertBefore(s,t?d:d.nextSibling)}),l=function(e){for(var n=s.href,t=a.length;t--;)if(a[t].href===n)return e()
                     setTimeout(function(){l(e)})},s.addEventListener&&s.addEventListener("load",function(){this.media=u}),s.onloadcssdefined=l,l(function(){s.media!==u&&(s.media=u)}),s}
             "undefined"!=typeof exports?exports.loadCSS=n:e.loadCSS=n}("undefined"!=typeof global?global:this)
-    </script>
-    <script>
         loadCSS('{{asset "css/styles.css"}}');
-    </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-    <script>
-        WebFont.load({
-            google: {
-                families: ['Open+Sans', 'Merriweather']
-            }
-        });
     </script>
     <noscript>
         <link rel="stylesheet" type="text/css" href="{{asset "css/styles.css"}}" />
@@ -42,6 +32,8 @@
     {{!-- Styles'n'Scripts --}}
 
     <!--<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />-->
+
+    <script async src="{{asset "js/bundle.js"}}"></script>
 
     {{!-- Ghost outputs important style and meta data with this tag --}}
     {{ghost_head}}
@@ -64,14 +56,7 @@
 
     </div>
 
-    {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-    {{!-- Ghost outputs important scripts and data with this tag --}}
     {{ghost_foot}}
-    {{!-- Fitvids makes video embeds responsive and awesome --}}
-    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
-    {{!-- The main JavaScript file for Casper --}}
-    <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
 
 </body>
 </html>

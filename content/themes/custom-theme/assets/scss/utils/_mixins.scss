@@ -1,0 +1,6 @@
+//Critical scss
+@mixin critical($critical-only:true){
+    @if (($critical-css-only and $critical-only) or (not $critical-css-only and not $critical-only)){
+        @content;
+    }
+}

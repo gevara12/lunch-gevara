@@ -16,6 +16,7 @@
     {{!-- Brand icon --}}
     <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
 
+    <style>body{color:#3a4145;font-family:serif}.wf-active body{font-family:"Merriweather", serif}.nav,.content,footer{opacity:0}*{margin:0;padding:0;box-sizing:border-box}*:before,*:after{box-sizing:border-box}.main-header{position:relative;display:table;width:100%;height:100vh;margin-bottom:5rem;text-align:center;background:no-repeat center center;background-size:cover;overflow:hidden}.main-header .inner{width:80%}.main-nav{position:relative;padding:35px 40px;margin:0 0 30px 0}.main-nav a{text-decoration:none;font-family:'Open Sans', sans-serif}.vertical{display:table-cell;vertical-align:middle}body.nav-opened .nav-cover{position:fixed;top:0;left:0;right:240px;bottom:0;z-index:200}.nav{position:fixed;top:0;right:0;bottom:0;z-index:5;width:240px;opacity:0;background:#111;margin-bottom:0;text-align:left;overflow-y:auto;-webkit-transition:-webkit-transform 0.5s ease, opacity 0.3s ease 0.7s;transition:transform 0.5s ease, opacity 0.3s ease 0.7s}</style>
     <script>
         // https://github.com/filamentgroup/loadCSS
         !function(e){"use strict"
@@ -24,17 +25,23 @@
                     setTimeout(function(){l(e)})},s.addEventListener&&s.addEventListener("load",function(){this.media=u}),s.onloadcssdefined=l,l(function(){s.media!==u&&(s.media=u)}),s}
             "undefined"!=typeof exports?exports.loadCSS=n:e.loadCSS=n}("undefined"!=typeof global?global:this)
     </script>
-    <style>.content, footer { opacity:0; }</style>
     <script>
         loadCSS('{{asset "css/styles.css"}}');
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+        WebFont.load({
+            google: {
+                families: ['Open+Sans', 'Merriweather']
+            }
+        });
     </script>
     <noscript>
         <link rel="stylesheet" type="text/css" href="{{asset "css/styles.css"}}" />
     </noscript>
     {{!-- Styles'n'Scripts --}}
-    
 
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <!--<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />-->
 
     {{!-- Ghost outputs important style and meta data with this tag --}}
     {{ghost_head}}

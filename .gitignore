@@ -1,5 +1,5 @@
 /node_modules
 /.idea
 /content/**/*.map
-/content/data/
+#/content/data/
 #/content/themes/casper/*

@@ -16,8 +16,9 @@ var paths = {
     },
     sassOptionsDev = {
         errLogToConsole: true,
-        outputStyle: 'nested'
+        outputStyle: 'compressed'
     };
+
 gulp.task('image-opt', function () {
     return gulp.src(['content/images/**/*.JPG'])
         .pipe(imagemin({
@@ -26,13 +27,14 @@ gulp.task('image-opt', function () {
         }))
         .pipe(gulp.dest('content/images/optimized'));
 });
+
 // Styles
 gulp.task('styles', function () {
     return gulp.src(paths.inputScss)
-        .pipe(sourcemaps.init({loadMaps: true}))
+        //.pipe(sourcemaps.init({loadMaps: true}))
         .pipe(sass(sassOptionsDev).on('error', sass.logError))
         .pipe(debug())
-        .pipe(sourcemaps.write('./'))
+        //.pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(paths.outCss));
 });
 // Scripts

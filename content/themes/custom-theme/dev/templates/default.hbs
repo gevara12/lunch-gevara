@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{!-- Document Settings --}}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{!-- Page Meta --}}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    {{!-- Mobile Meta --}}
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {{!-- Brand icon --}}
+    <link rel="shortcut icon" href="{{asset "images/favicon.ico"}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset "images/favicon-32x32.png"}}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{asset "images/favicon-96x96.png"}}">
+    <link rel="manifest" href="{{asset "manifest.json"}}" />
+    <meta name="theme-color" content="#f00">
+
+    <!-- inject-style src="content/themes/custom-theme/assets/css/small.css" -->
+
+    <script>
+        // https://github.com/filamentgroup/loadCSS
+        !function(e){"use strict"
+            var n=function(n,t,o){function i(e){return f.body?e():void setTimeout(function(){i(e)})}var d,r,a,l,f=e.document,s=f.createElement("link"),u=o||"all"
+                return t?d=t:(r=(f.body||f.getElementsByTagName("head")[0]).childNodes,d=r[r.length-1]),a=f.styleSheets,s.rel="stylesheet",s.href=n,s.media="only x",i(function(){d.parentNode.insertBefore(s,t?d:d.nextSibling)}),l=function(e){for(var n=s.href,t=a.length;t--;)if(a[t].href===n)return e()
+                    setTimeout(function(){l(e)})},s.addEventListener&&s.addEventListener("load",function(){this.media=u}),s.onloadcssdefined=l,l(function(){s.media!==u&&(s.media=u)}),s}
+            "undefined"!=typeof exports?exports.loadCSS=n:e.loadCSS=n}("undefined"!=typeof global?global:this)
+        loadCSS('{{asset "css/styles.css"}}');
+    </script>
+    <noscript>
+        <link rel="stylesheet" type="text/css" href="{{asset "css/styles.css"}}" />
+    </noscript>
+    {{!-- Styles'n'Scripts --}}
+
+    <!--<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />-->
+
+    <script async src="{{asset "js/bundle.js"}}"></script>
+
+    {{!-- Ghost outputs important style and meta data with this tag --}}
+    {{ghost_head}}
+</head>
+<body class="{{body_class}} nav-closed">
+
+    {{!-- The blog navigation links --}}
+    {{navigation}}
+
+    <div class="site-wrapper">
+
+        {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
+        {{{body}}}
+
+        {{!-- The tiny footer at the very bottom --}}
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
+            <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+        </footer>
+
+    </div>
+
+    {{ghost_foot}}
+
+</body>
+</html>

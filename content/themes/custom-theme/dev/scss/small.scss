@@ -1,0 +1,21 @@
+@import 'utils/vars',
+'utils/mixins';
+
+$critical-css-only : true;
+
+body {
+    color       : #3a4145;
+    font-family : serif;
+}
+
+.wf-active {
+    body {
+        font-family : "Merriweather", serif;
+    }
+}
+
+//.nav, .content, footer { opacity : 0; }
+
+@import 'utils/reset',
+'utils/main-styles',
+'utils/navs';

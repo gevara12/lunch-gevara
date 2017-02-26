@@ -21,25 +21,49 @@
     }
 }
 
-.icon-ghost:before { content : "\f600"; }
-
-.icon-feed:before { content : "\f601"; }
-
-.icon-twitter:before { content : "\f602"; font-size : 1.1em; }
-
-.icon-google-plus:before { content : "\f603"; }
-
-.icon-facebook:before { content : "\f604"; }
-
-.icon-arrow-left:before { content : "\f605"; }
-
-.icon-stats:before { content : "\f606"; }
-
-.icon-location:before {
-    content     : "\f607";
-    margin-left : -3px; /* Tracking fix */
+.icon-ghost {
+    &:before { content : $icon-ghost; }
 }
 
-.icon-link:before { content : "\f608"; }
+.icon-feed {
+    &:before { content : $icon-feed; }
+}
 
-.icon-menu:before { content : "\f609"; }
+.icon-twitter {
+    &:before { content : $icon-twitter; font-size : 1.1em; }
+}
+
+.icon-google-plus {
+    &:before { content : $icon-google-plus; }
+}
+
+.icon-facebook {
+    &:before { content : $icon-facebook; }
+}
+
+.icon-arrow-left {
+    &:before { content : $icon-arrow-left; }
+}
+
+.icon-stats {
+    &:before { content : $icon-stats; }
+}
+
+.icon-location {
+    &:before {
+        content     : $icon-location;
+        margin-left : -3px;
+    }
+}
+
+.icon-link {
+    &:before { content : $icon-link; }
+}
+
+.icon-menu {
+    &:before { content : $icon-menu; }
+}
+
+.icon-vk {
+    &:before { content : $icon-vk; }
+}

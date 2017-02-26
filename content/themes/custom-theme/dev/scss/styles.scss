@@ -2,7 +2,8 @@
 'utils/mixins',
 'utils/reset',
 'utils/fonts',
-'utils/typography';
+'utils/typography',
+'utils/grid';
 
 /* ==========================================================================
    Table of Contents
@@ -37,35 +38,21 @@
    2. General - Setting up some base styles
    ========================================================================== */
 
-html {
-    height                      : 100%;
-    max-height                  : 100%;
-    font-size                   : 62.5%;
-    -webkit-tap-highlight-color : rgba(0, 0, 0, 0);
-}
+::-moz-selection { background : #d6edff; }
 
-body {
-    height                        : 100%;
-    max-height                    : 100%;
-    letter-spacing                : 0.01rem;
-    font-size                     : 1.8rem;
-    line-height                   : 1.75em;
-    -webkit-font-feature-settings : 'kern' 1;
-    -moz-font-feature-settings    : 'kern' 1;
-    -o-font-feature-settings      : 'kern' 1;
-    text-rendering                : geometricPrecision;
-}
-
-::-moz-selection {
-    background : #d6edff;
-}
-
-::selection {
-    background : #d6edff;
-}
+::selection { background : #d6edff; }
 
 ol, ul {
     padding-left : 3rem;
+    li {
+        margin : 0 0 12px;
+        &:last-child { margin-bottom : 0; }
+        li { margin : 0; }
+    }
+
+    li > p:last-of-type {
+        margin-bottom : 0;
+    }
 }
 
 ol ol, ul ul,
@@ -74,33 +61,22 @@ ul ol, ol ul {
     padding-left : 2em;
 }
 
-dl dt {
-    float         : left;
-    width         : 180px;
-    overflow      : hidden;
-    clear         : left;
-    text-align    : right;
-    text-overflow : ellipsis;
-    white-space   : nowrap;
-    font-weight   : 700;
-    margin-bottom : 1em;
-}
-
-dl dd {
-    margin-left   : 200px;
-    margin-bottom : 1em
-}
-
-li {
-    margin : 0.4em 0;
-}
-
-li li {
-    margin : 0;
-}
-
-li > p:last-of-type {
-    margin-bottom : 0;
+dl {
+    dt {
+        float         : left;
+        width         : 180px;
+        overflow      : hidden;
+        clear         : left;
+        text-align    : right;
+        text-overflow : ellipsis;
+        white-space   : nowrap;
+        font-weight   : 700;
+        margin-bottom : 1em;
+    }
+    dd {
+        margin-left   : 200px;
+        margin-bottom : 1em
+    }
 }
 
 hr {
@@ -345,21 +321,19 @@ button {
 
 /* Wraps the main content & footer */
 .site-wrapper {
-    position           : relative;
-    z-index            : 10;
-    min-height         : 100%;
-    background         : $white;
-    -webkit-transition : -webkit-transform 0.5s ease;
-    transition         : transform 0.5s ease;
+    //display        : flex;
+    //flex-direction : column;
+    position   : relative;
+    z-index    : 10;
+    min-height : 100%;
+    background : $white;
+    transition : transform 0.5s ease;
 }
 
 body.nav-opened .site-wrapper {
-    overflow-x         : hidden;
-    -webkit-transform  : translate3D(-240px, 0, 0);
-    -ms-transform      : translate3D(-240px, 0, 0);
-    transform          : translate3D(-240px, 0, 0);
-    -webkit-transition : -webkit-transform 0.3s ease;
-    transition         : transform 0.3s ease;
+    overflow-x : hidden;
+    transform  : translate3D(-240px, 0, 0);
+    transition : transform 0.3s ease;
 }
 
 @import 'utils/main-styles',
@@ -367,23 +341,20 @@ body.nav-opened .site-wrapper {
 
 /* Create a bouncing scroll-down arrow on homepage with cover image */
 .scroll-down {
-    display           : block;
-    position          : absolute;
-    z-index           : 100;
-    bottom            : 45px;
-    left              : 50%;
-    margin-left       : -16px;
-    width             : 34px;
-    height            : 34px;
-    font-size         : 34px;
-    text-align        : center;
-    text-decoration   : none;
-    color             : rgba(255, 255, 255, 0.7);
-    -webkit-transform : rotate(-90deg);
-    -ms-transform     : rotate(-90deg);
-    transform         : rotate(-90deg);
-    -webkit-animation : bounce 4s 2s infinite;
-    animation         : bounce 4s 2s infinite;
+    display         : block;
+    position        : absolute;
+    z-index         : 100;
+    bottom          : 45px;
+    left            : 50%;
+    margin-left     : -16px;
+    width           : 34px;
+    height          : 34px;
+    font-size       : 34px;
+    text-align      : center;
+    text-decoration : none;
+    color           : rgba(255, 255, 255, 0.7);
+    transform       : rotate(-90deg);
+    animation       : bounce 4s 2s infinite;
 }
 
 /* Stop it bouncing and increase contrast when hovered */
@@ -508,38 +479,14 @@ body.nav-opened .site-wrapper {
     background : none;
 }
 
-/* The details of your blog. Defined in ghost/settings/ */
-.page-title {
-    margin         : 10px 0 10px 0;
-    font-size      : 5rem;
-    letter-spacing : -1px;
-    font-weight    : 700;
-    font-family    : "Open Sans", sans-serif;
-    color          : #fff;
-}
-
-.page-description {
-    margin         : 0;
-    font-size      : 2rem;
-    line-height    : 1.5em;
-    font-weight    : 400;
-    font-family    : "Merriweather", serif;
-    letter-spacing : 0.01rem;
-    color          : rgba(255, 255, 255, 0.8);
-}
-
-.no-cover.main-header {
-    min-height : 160px;
-    max-height : 40vh;
-    background : #f5f8fa;
-}
-
-.no-cover .page-title {
-    color : rgba(0, 0, 0, 0.8);
-}
-
-.no-cover .page-description {
-    color : rgba(0, 0, 0, 0.5);
+.no-cover {
+    &.main-header {
+        min-height : 160px;
+        max-height : 40vh;
+        background : #f5f8fa;
+    }
+    .page-title { color : rgba(0, 0, 0, 0.8); }
+    .page-description { color : rgba(0, 0, 0, 0.5); }
 }
 
 /* Add subtle load-in animation for content on the home page */
@@ -558,7 +505,6 @@ body.nav-opened .site-wrapper {
 }
 
 /* Every post, on every page, gets this style on its <article> tag */
-
 
 body:not(.post-template) .post-title {
     font-size : 3.6rem;
@@ -665,78 +611,48 @@ body.page-template .post-title {
    5. Single Post - When you click on an individual post
    ========================================================================== */
 
-.post-template .post-header,
-.page-template .post-header {
-    margin-bottom : 3.4rem;
-}
-
-.post-template .post-title,
-.page-template .post-title {
-    margin-bottom : 0;
-}
-
-.post-template .post-meta,
-.page-template .post-meta {
-    margin : 0;
-}
-
-.post-template .post-date,
-.page-template .post-date {
-    padding : 0;
-    margin  : 0;
-    border  : none;
-}
-
-/* Stop elements, such as img wider than the post content, from
-   creating horizontal scroll - slight hack due to imperfections
-   with browser width % calculations and rounding */
-.post-template .content,
-.page-template .content {
-    overflow : hidden;
-}
-
-/* Tweak the .post wrapper style */
-.post-template .post,
-.page-template .post {
-    margin-top     : 0;
-    border-bottom  : none;
-    padding-bottom : 0;
-}
-
-/* Kill that stylish little circle that was on the border, too */
-.post-template .post:after,
-.page-template .post:after {
-    display : none;
+.post-template,
+.page-template {
+    .post-header { margin-bottom : 3.4rem; }
+    .post-title { margin-bottom : 0; }
+    .post-meta { margin : 0; }
+    .post-date {
+        padding : 0;
+        margin  : 0;
+        border  : none;
+    }
+    .content { overflow : hidden; }
+    .post {
+        margin-top     : 0;
+        border-bottom  : none;
+        padding-bottom : 0;
+        &:after { display : none; }
+    }
 }
 
 /* Keep images centered, and allow images wider than the main
    text column to break out. */
-.post-content img {
-    display   : block;
-    max-width : 126%;
-    height    : auto;
-    padding   : 0.6em 0;
-    position  : relative;
-    left      : 50%;
-    transform : translateX(-50%);
+.post-content {
+    img {
+        display   : block;
+        max-width : 90%;
+        height    : auto;
+        padding   : 0.6em 0;
+        position  : relative;
+        left      : 50%;
+        transform : translateX(-50%);
+    }
 }
 
 .footnotes {
     font-style  : italic;
     font-size   : 1.3rem;
     line-height : 1.6em;
-}
-
-.footnotes li {
-    margin : 0.6rem 0;
-}
-
-.footnotes p {
-    margin : 0;
-}
-
-.footnotes p a:last-child {
-    text-decoration : none;
+    li { margin : 0.6rem 0; }
+    p {
+        margin : 0;
+        a:last-child { text-decoration : none; }
+    }
 }
 
 /* The author credit area after the post */
@@ -745,17 +661,15 @@ body.page-template .post-title {
     margin     : 6rem 0 0 0;
     padding    : 3rem 0 0 0;
     border-top : #ebf2f6 1px solid;
-}
-
-.post-footer h4 {
-    font-size : 1.8rem;
-    margin    : 0;
-}
-
-.post-footer p {
-    margin      : 1rem 0;
-    font-size   : 1.4rem;
-    line-height : 1.75em;
+    h4 {
+        font-size : 1.8rem;
+        margin    : 0;
+    }
+    p {
+        margin      : 1rem 0;
+        font-size   : 1.4rem;
+        line-height : 1.75em;
+    }
 }
 
 /* list of author links - location / url */
@@ -825,8 +739,6 @@ body.page-template .post-title {
 /* ==========================================================================
    6. Author profile
    ========================================================================== */
-
-
 
 .tag-head.main-header {
     height     : 40vh;
@@ -1244,44 +1156,8 @@ body.page-template .post-title {
     line-height : 1.4em;
 }
 
-/* ==========================================================================
-   11. Footer - The bottom of every page
-   ========================================================================== */
-
-.site-footer {
-    position    : relative;
-    margin      : 8rem 0 0 0;
-    padding     : 1rem 15px;
-    font-family : "Open Sans", sans-serif;
-    font-size   : 1rem;
-    line-height : 1.75em;
-    color       : #bbc7cc;
-}
-
-.site-footer a {
-    color           : #bbc7cc;
-    text-decoration : none;
-    font-weight     : bold;
-}
-
-.site-footer a:hover {
-    border-bottom : #bbc7cc 1px solid;
-}
-
-.poweredby {
-    display    : block;
-    width      : 45%;
-    float      : right;
-    text-align : right;
-}
-
-.copyright {
-    display : block;
-    width   : 45%;
-    float   : left;
-}
-
-@import 'utils/mobile',
+@import 'utils/footer',
+'utils/mobile',
 'utils/animation';
 
-.nav, .content, footer { opacity : 1; }
+.content, footer { opacity : 1; }

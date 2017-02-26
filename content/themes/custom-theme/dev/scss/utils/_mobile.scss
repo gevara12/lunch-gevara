@@ -9,13 +9,11 @@
     }
 
     .main-header {
-        -webkit-box-sizing : border-box;
-        -moz-box-sizing    : border-box;
-        box-sizing         : border-box;
-        height             : auto;
-        min-height         : 240px;
-        height             : 60vh;
-        padding            : 15% 0;
+        box-sizing : border-box;
+        height     : auto;
+        min-height : 240px;
+        height     : 60vh;
+        padding    : 15% 0;
     }
 
     .scroll-down,
@@ -342,32 +340,27 @@
     .post-footer {
         padding    : 5rem 0 3rem 0;
         text-align : center;
-    }
-
-    .post-footer .author {
-        margin        : 0 0 2rem 0;
-        padding       : 0 0 1.6rem 0;
-        border-bottom : #ebf2f6 1px dashed;
-    }
-
-    .post-footer .share {
-        position : static;
-        width    : auto;
-    }
-
-    .post-footer .share a {
-        margin : 1.4rem 0.8rem 0 0.8rem;
+        .author {
+            margin        : 0;
+            padding       : 0 0 1.6rem 0;
+            border-bottom : #ebf2f6 1px dashed;
+        }
+        .share {
+            position : static;
+            width    : auto;
+            a {
+                margin : 1.4rem 0.8rem 0 0.8rem;
+            }
+        }
     }
 
     .author-meta li {
         float       : none;
         margin      : 0;
         line-height : 1.75em;
+        &:before { display : none; }
     }
 
-    .author-meta li:before {
-        display : none;
-    }
 
     .older-posts,
     .newer-posts {

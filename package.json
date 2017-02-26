@@ -19,11 +19,11 @@
   "main": "./core/index",
   "scripts": {
     "preinstall": "node core/server/utils/npm/preinstall.js",
-    "start": "node index --production",
+    "start": "GHOST_NODE_VERSION_CHECK=false node index --production",
     "test": "grunt validate --verbose"
   },
   "engines": {
-    "node": "^4.2.0 || ^6.9.0"
+    "node": "^4.2.0 || ^6.9.0 || ^6.10.0"
   },
   "dependencies": {
     "amperize": "1.0.0",

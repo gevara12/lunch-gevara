@@ -18,7 +18,7 @@
     {{amp_ghost_head}}
 
     {{!-- Styles'n'Scripts --}}
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,600,400" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:400,700:cyrillic|Open+Sans:700,400:cyrillic" />
     <style amp-custom>
         /* ==========================================================================
            Table of Contents
@@ -238,7 +238,6 @@
             color: #3a4145;
             background: #f4f8fb;
             letter-spacing: 0.01rem;
-            font-family: "Merriweather", serif;
             font-size: 1.8rem;
             line-height: 1.75em;
             text-rendering: geometricPrecision;
@@ -748,38 +747,24 @@
            ========================================================================== */
 
         .site-footer {
-            position: relative;
-            margin: 0 auto 20px auto;
-            padding: 1rem 15px;
-            max-width: 600px;
-            color: rgba(0,0,0,0.5);
-            font-family: "Open Sans", sans-serif;
-            font-size: 1.1rem;
-            line-height: 1.75em;
+            position : relative;
+            margin   : 2rem 0 0 0;
+            padding  : 1rem 15px;
+            font     : 1.25rem/1.75rem "Open Sans", sans-serif;
+            color    : #bbc7cc;
         }
 
         .site-footer a {
-            color: rgba(0,0,0,0.5);
-            text-decoration: none;
-            font-weight: bold;
+            color           : #bbc7cc;
+            text-decoration : none;
+            font-weight     : bold;
         }
 
         .site-footer a:hover {
-            border-bottom: #bbc7cc 1px solid;
+            border-bottom : #bbc7cc 1px solid;
         }
 
-        .poweredby {
-            display: block;
-            float: right;
-            width: 45%;
-            text-align: right;
-        }
-
-        .copyright {
-            display: block;
-            float: left;
-            width: 45%;
-        }
+        .copyright { text-align: center; }
     </style>
 
     {{!-- The AMP boilerplate --}}
@@ -826,7 +811,6 @@
     {{/post}}
     <footer class="site-footer clearfix">
         <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
-        <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
     </footer>
 </body>
 </html>

@@ -73,10 +73,6 @@ gulp.task('inject', ['styles'], function() {
         .pipe(gulp.dest("content/themes/custom-theme"))
 });
 
-// Clean
-// gulp.task('clean', function () {
-//     return del(['dist/styles', 'dist/scripts']);
-// });
 // Default task
 gulp.task('default', function () {
     gulp.start('styles');

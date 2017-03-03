@@ -91,12 +91,10 @@
         background      : transparent;
         justify-content : flex-end;
     }
-
     .page-title {
         letter-spacing : -1px;
         font-weight    : 700;
         font-family    : "Open Sans", sans-serif;
-        color          : #fff;
     }
     .page-description {
         margin         : 0;
@@ -105,7 +103,6 @@
         font-weight    : 400;
         font-family    : "Merriweather", serif;
         letter-spacing : 0.01rem;
-        color          : rgba(255, 255, 255, 0.8);
     }
     @media only screen and (max-width : 500px) {
         body:not(.post-template) .post-title { font-size : 2.5rem; }
@@ -120,7 +117,9 @@
     .page-title {
         margin    : 10px 0 10px 0;
         font-size : 5rem;
+        color     : $white;
     }
+    .page-description { color : rgba(255, 255, 255, 0.8); }
     .post { margin : 2.5rem auto; }
     .main-nav { display : block; }
 }

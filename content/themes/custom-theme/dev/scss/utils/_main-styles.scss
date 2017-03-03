@@ -24,18 +24,21 @@
         margin    : 0 auto;
     }
     .main-header {
-        flex            : 1;
-        position        : relative;
-        display         : flex;
-        align-content   : center;
-        justify-content : center;
-        text-align      : center;
-        width           : 100%;
+        flex             : 1;
+        position         : relative;
+        display          : flex;
+        align-content    : center;
+        justify-content  : center;
+        text-align       : center;
+        width            : 100%;
+        height           : 100vh;
+        margin-bottom    : 5rem;
         //height          : 85px;
-        background      : no-repeat center center;
-        background-size : cover;
-        overflow        : hidden;
-        transition      : all 0.5s linear;
+        background       : no-repeat center center;
+        background-size  : cover;
+        background-image : url('https://pp.userapi.com/c626219/v626219757/4975b/pdcHCtWdDMs.jpg');
+        overflow         : hidden;
+        transition       : all 0.5s linear;
         //.inner {
         //    width  : 80%;
         //    margin : 0 auto;
@@ -95,6 +98,7 @@
         letter-spacing : -1px;
         font-weight    : 700;
         font-family    : "Open Sans", sans-serif;
+        color          : $white;
     }
     .page-description {
         margin         : 0;
@@ -103,23 +107,30 @@
         font-weight    : 400;
         font-family    : "Merriweather", serif;
         letter-spacing : 0.01rem;
+        color          : rgba(255, 255, 255, 0.8);
+    }
+    @media only screen and (max-width : 900px) {
+        .main-header {
+            min-height : 240px;
+            height     : 60vh;
+            padding    : 15% 0;
+        }
     }
     @media only screen and (max-width : 500px) {
         body:not(.post-template) .post-title { font-size : 2.5rem; }
+        .main-header {
+            margin-bottom : 15px;
+            height        : 40vh;
+        }
     }
 }
 
 @include critical(false) {
-    .main-header {
-        margin-bottom : 5rem;
-        height        : 100vh;
-    }
+
     .page-title {
         margin    : 10px 0 10px 0;
         font-size : 5rem;
-        color     : $white;
     }
-    .page-description { color : rgba(255, 255, 255, 0.8); }
     .post { margin : 2.5rem auto; }
     .main-nav { display : block; }
 }

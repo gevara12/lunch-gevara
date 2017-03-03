@@ -4,17 +4,7 @@
 
 @media only screen and (max-width : 900px) {
 
-    blockquote {
-        margin-left : 0;
-    }
-
-    .main-header {
-        box-sizing : border-box;
-        height     : auto;
-        min-height : 240px;
-        height     : 60vh;
-        padding    : 15% 0;
-    }
+    blockquote { margin-left : 0; }
 
     .scroll-down,
     .home-template .main-header:after { display : none; }
@@ -24,9 +14,7 @@
         padding    : 10% 0;
     }
 
-    .blog-logo img {
-        padding : 4px 0;
-    }
+    .blog-logo img { padding : 4px 0; }
 
     .page-title {
         font-size      : 4rem;
@@ -154,11 +142,6 @@
    ========================================================================== */
 
 @media only screen and (max-width : 500px) {
-
-    .main-header {
-        margin-bottom : 15px;
-        height        : 40vh;
-    }
 
     .no-cover.main-header {
         height : 30vh;

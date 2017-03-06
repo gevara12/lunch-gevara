@@ -4,7 +4,17 @@
 
 @media only screen and (max-width : 900px) {
 
-    blockquote { margin-left : 0; }
+    blockquote {
+        margin-left : 0;
+    }
+
+    .main-header {
+        box-sizing : border-box;
+        height     : auto;
+        min-height : 240px;
+        height     : 60vh;
+        padding    : 15% 0;
+    }
 
     .scroll-down,
     .home-template .main-header:after { display : none; }
@@ -14,7 +24,9 @@
         padding    : 10% 0;
     }
 
-    .blog-logo img { padding : 4px 0; }
+    .blog-logo img {
+        padding : 4px 0;
+    }
 
     .page-title {
         font-size      : 4rem;
@@ -107,27 +119,15 @@
 
     .gh-subscribe {
         padding : 2rem;
+        p { font-size : 1.4rem; }
     }
 
-    .gh-subscribe-title {
-        font-size : 2rem
-    }
-
-    .gh-subscribe p {
-        font-size : 1.4rem;
-    }
+    .gh-subscribe-title { font-size : 2rem }
 
     .read-next {
-        -webkit-box-orient     : vertical;
-        -webkit-box-direction  : normal;
-        -webkit-flex-direction : column;
-        -ms-flex-direction     : column;
-        flex-direction         : column;
-        margin-top             : 4rem;
-    }
-
-    .read-next p {
-        display : none;
+        flex-direction : column;
+        margin-top     : 4rem;
+        p { display : none; }
     }
 
     .read-next-story.no-cover + .read-next-story.no-cover {
@@ -142,6 +142,11 @@
    ========================================================================== */
 
 @media only screen and (max-width : 500px) {
+
+    .main-header {
+        margin-bottom : 15px;
+        height        : 40vh;
+    }
 
     .no-cover.main-header {
         height : 30vh;
@@ -160,10 +165,7 @@
 
     .blog-logo {
         padding : 5px;
-    }
-
-    .blog-logo img {
-        height : 30px;
+        img { height : 30px; }
     }
 
     .menu-button {
@@ -172,11 +174,11 @@
         border-width  : 0;
         color         : #2e2e2e;
         background    : transparent;
-    }
-    .menu-button:hover {
-        color        : #2e2e2e;
-        border-color : transparent;
-        background   : none;
+        &:hover {
+            color        : #2e2e2e;
+            border-color : transparent;
+            background   : none;
+        }
     }
     body.nav-opened .menu-button {
         background : none;
@@ -344,7 +346,6 @@
         &:before { display : none; }
     }
 
-
     .older-posts,
     .newer-posts {
         position : static;
@@ -384,25 +385,16 @@
         font-size : 1.4rem;
     }
 
-    .paged .main-header .page-description {
-        display : none;
-    }
+    .paged .main-header .page-description { display : none; }
 
     .gh-subscribe {
         padding : 15px;
-    }
-
-    .gh-subscribe form {
-        margin-top : 10px;
+        form { margin-top : 10px; }
     }
 
     .read-next {
         margin-top    : 2rem;
         margin-bottom : -37px;
+        .post { width : 100%; }
     }
-
-    .read-next .post {
-        width : 100%;
-    }
-
 }

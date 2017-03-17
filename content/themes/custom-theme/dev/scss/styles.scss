@@ -400,14 +400,14 @@ body.nav-opened .site-wrapper {
     float      : left;
     background : none !important; /* Makes sure there is never a background */
     border     : none !important; /* Makes sure there is never a border */
+    img {
+        display : block;
+        height  : 42px;
+        padding : 1px 0 5px 0;
+        width   : auto;
+    }
 }
 
-.blog-logo img {
-    display : block;
-    height  : 38px;
-    padding : 1px 0 5px 0;
-    width   : auto;
-}
 
 .menu-button {
     display       : inline-block;

@@ -38,32 +38,6 @@
    2. General - Setting up some base styles
    ========================================================================== */
 
-.css-tooltip {
-    position : relative;
-    &.top {
-        &[data-title]:hover {
-            &:after {
-                left: 0;
-                bottom: calc(100% + 8px);
-            }
-        }
-    }
-    &[data-title]:hover {
-        &:after {
-            content       : attr(data-title);
-            position      : absolute;
-            left          : calc(100% + 8px);
-            z-index       : 5;
-            padding       : 12px 24px;
-            font-size     : 16px;
-            white-space   : nowrap;
-            color         : #FFF;
-            background    : rgba(0, 0, 0, 0.8);
-            border-radius : 5px;
-        }
-    }
-}
-
 ::-moz-selection { background : #d6edff; }
 
 ::selection { background : #d6edff; }

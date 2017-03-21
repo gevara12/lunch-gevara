@@ -19,7 +19,7 @@
   "main": "./core/index",
   "scripts": {
     "preinstall": "node core/server/utils/npm/preinstall.js",
-    "start": "GHOST_NODE_VERSION_CHECK=false node index --production",
+    "start": "node index --production",
     "test": "grunt validate --verbose"
   },
   "engines": {

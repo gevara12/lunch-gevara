@@ -4,7 +4,6 @@ var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     sourcemaps = require('gulp-sourcemaps'),
     debug = require('gulp-debug'),
-// uglify = require('gulp-uglify'),
     concat = require('gulp-concat'),
     imagemin = require('gulp-imagemin'),
     imageResize = require('gulp-image-resize'),
@@ -46,6 +45,7 @@ gulp.task('styles', function () {
         //.pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(paths.outCss));
 });
+
 // Scripts
 gulp.task('scripts', function () {
     return gulp.src(['content/themes/custom-theme/dev/js/webfont.js',
@@ -67,7 +67,7 @@ gulp.task('scripts', function () {
         }));
 });
 
-gulp.task('inject', ['styles'], function() {
+gulp.task('inject', ['styles'], function () {
     gulp.src("content/themes/custom-theme/dev/templates/*.hbs")
         .pipe(styleInject())
         .pipe(gulp.dest("content/themes/custom-theme"))
@@ -77,20 +77,12 @@ gulp.task('inject', ['styles'], function() {
 gulp.task('default', function () {
     gulp.start('styles');
 });
+
 // Watch
 gulp.task('watch', function () {
-
-    // Watch .scss files
     gulp.watch('content/themes/custom-theme/dev/**/*.scss', ['styles', 'inject']);
     gulp.watch('content/themes/custom-theme/dev/**/*.js', ['scripts']);
     gulp.watch('content/themes/custom-theme/dev/templates/*.hbs', ['inject']);
-    // Watch .js files
-    // gulp.watch('src/scripts/**/*.js', ['scripts']);
-    // Watch PHP files
-    // gulp.watch('src/php/**/*', ['php']);
-    // Create LiveReload server
-    // livereload.listen();
-    // Watch any files in dist/, reload on change
-    // gulp.watch(['dist/**', 'index.html']).on('change', livereload.changed);
 });
+
 gulp.task('default', ['watch']);

@@ -10,6 +10,9 @@ var gulp = require('gulp'),
     notify = require('gulp-notify'),
     cache = require('gulp-cache'),
     styleInject = require("gulp-style-inject"),
+    replace = require('gulp-replace'),
+    rename = require('gulp-rename'),
+    fs = require('fs'),
     del = require('del');
 
 //other vars
@@ -69,9 +72,19 @@ gulp.task('scripts', function () {
 });
 
 gulp.task('inject', ['styles'], function () {
-    gulp.src("content/themes/custom-theme/dev/templates/*.hbs")
+    gulp.src("content/themes/custom-theme/dev/templates/default.hbs")
         .pipe(styleInject())
         .pipe(gulp.dest("content/themes/custom-theme"))
+});
+
+gulp.task('inject-amp', function () {
+    gulp.src("content/themes/custom-theme/dev/templates/amp-styles-src.hbs")
+        .pipe(replace('<link rel="stylesheet">', function () {
+            var style = fs.readFileSync('content/themes/custom-theme/assets/css/amp.css', 'utf-8');
+            return '<style amp-custom>\n' + style + '\n</style>';
+        }))
+        .pipe(rename('amp-styles.hbs'))
+        .pipe(gulp.dest("content/themes/custom-theme/partials"))
 });
 
 // Default task

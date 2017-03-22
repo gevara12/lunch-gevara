@@ -6,14 +6,30 @@ $white : rgba(255, 255, 255, 1);
 
 $gray-1 : #c0c0c0;
 
-$icon-ghost: "\f600";
-$icon-feed: "\f601";
-$icon-twitter: "\f602";
-$icon-google-plus: "\f603";
-$icon-facebook: "\f604";
-$icon-arrow-left: "\f605";
-$icon-stats: "\f606";
-$icon-location: "\f607";
-$icon-link: "\f608";
-$icon-menu: "\f609";
-$icon-vk: "\ea98";
+$site-bg : #fbfafa;
+
+$body-c : #333;
+$headers-c : #30B08F;
+$post-title-c : #85CDA7;
+$link-c : #85CDA7;
+$link-c-hover : darken($link-c, 10%);
+
+$code-bg : #444;
+$code-c : #EE898A;
+$code-c-selector : #8CB2E9;
+$code-c-important : lighten($code-c-selector, 10%);
+$code-c-function : darken($code-c, 15%);
+
+$read-next-bg : #444;
+
+$icon-ghost : "\f600";
+$icon-feed : "\f601";
+$icon-twitter : "\f602";
+$icon-google-plus : "\f603";
+$icon-facebook : "\f604";
+$icon-arrow-left : "\f605";
+$icon-stats : "\f606";
+$icon-location : "\f607";
+$icon-link : "\f608";
+$icon-menu : "\f609";
+$icon-vk : "\ea98";

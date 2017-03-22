@@ -4,14 +4,12 @@
 $critical-css-only : true;
 
 body {
-    color       : #3a4145;
+    color       : $body-c;
     font-family : serif;
 }
 
 .wf-active {
-    body {
-        font-family : "Merriweather", sans-serif;
-    }
+    body { font-family : "Merriweather", sans-serif; }
 }
 
 //.nav, .content, footer { opacity : 0; }

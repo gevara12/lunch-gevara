@@ -30,7 +30,8 @@ $fluidbox__animation-bg-color : $fluidbox__overlay-bg-color !default;
     
     .fluidbox--opened & {
         pointer-events   : auto;
-        background-image : linear-gradient(to top left, rgba(130, 168, 158, 1), rgba(134, 150, 173, 1));
+        background       : transparent;
+        background-image : linear-gradient(to top left, rgba(130, 168, 158, 0.85), rgba(134, 150, 173, 0.85));
     }
 }
 

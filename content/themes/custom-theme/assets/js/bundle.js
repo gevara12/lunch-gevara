@@ -1815,7 +1815,7 @@ Prism.languages.scss['atrule'].inside.rest = Prism.util.clone(Prism.languages.sc
 
     $('.reading-time').html(readingTimeAsString);
 
-    $('a').fluidbox({
+    $('.post-content a').fluidbox({
         viewportFill: 0.8
     });
 

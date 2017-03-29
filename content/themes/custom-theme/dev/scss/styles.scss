@@ -617,8 +617,6 @@ body.page-template .post-title {
     }
 }
 
-/* Keep images centered, and allow images wider than the main
-   text column to break out. */
 .post-content {
     figure {
         margin : 1rem 0;
@@ -646,7 +644,6 @@ body.page-template .post-title {
     }
 }
 
-/* The author credit area after the post */
 .post-footer {
     position   : relative;
     margin     : 6rem 0 0 0;
@@ -932,8 +929,8 @@ body.page-template .post-title {
 }
 
 .read-next-story.no-cover {
-    .post{
-        &:hover{
+    .post {
+        &:hover {
             &:before {
                 color        : $link-c;
                 border-color : $white;
@@ -949,8 +946,6 @@ body.page-template .post-title {
     h2 { color : $headers-c; }
     //p { color : rgba(0, 0, 0, 0.5); }
 }
-
-
 
 /* if there are two posts without covers, put a border between them */
 .read-next-story.no-cover + .read-next-story.no-cover {
@@ -1139,6 +1134,7 @@ body.page-template .post-title {
 @import 'utils/footer',
 'utils/mobile',
 'utils/animation',
-'utils/prism';
+'utils/prism',
+'utils/_fluidbox';
 
 .content, footer { opacity : 1; }

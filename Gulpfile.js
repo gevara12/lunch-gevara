@@ -56,6 +56,7 @@ gulp.task('scripts', function () {
         'content/themes/custom-theme/dev/js/jquery-1.12.0.min.js',
         'content/themes/custom-theme/dev/js/jquery.fitvids.js',
         'content/themes/custom-theme/dev/js/prism.js',
+        'content/themes/custom-theme/dev/js/jquery.fluidbox.js',
         'content/themes/custom-theme/dev/js/index.js'
     ])
         .pipe(concat('bundle.js'))

@@ -60,4 +60,8 @@
 
     $('.reading-time').html(readingTimeAsString);
 
+    $('a').fluidbox({
+        viewportFill: 0.8
+    });
+
 })(jQuery);

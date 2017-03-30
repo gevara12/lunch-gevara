@@ -1819,4 +1819,10 @@ Prism.languages.scss['atrule'].inside.rest = Prism.util.clone(Prism.languages.sc
         viewportFill: 0.8
     });
 
+    if('serviceWorker' in navigator) {
+        navigator.serviceWorker
+            .register('/sw.js')
+            .then(function() { console.info("Service Worker Registered"); });
+    }
+
 })(jQuery);

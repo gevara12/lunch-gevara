@@ -51,8 +51,9 @@ gulp.task('styles', function () {
 
 // Scripts
 gulp.task('scripts', function () {
-    return gulp.src(['content/themes/custom-theme/dev/js/webfont.js',
-        'content/themes/custom-theme/dev/js/small-config.js',
+    return gulp.src([
+        // 'content/themes/custom-theme/dev/js/webfont.js',
+        // 'content/themes/custom-theme/dev/js/small-config.js',
         'content/themes/custom-theme/dev/js/jquery-1.12.0.min.js',
         'content/themes/custom-theme/dev/js/jquery.fitvids.js',
         'content/themes/custom-theme/dev/js/prism.js',

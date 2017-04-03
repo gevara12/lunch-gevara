@@ -1,0 +1,15 @@
+$icon-font : 'icons';
+$font-url : "../fonts/";
+$fonts : OpenSans-Regular, OpenSans-Italic, OpenSans-Bold, Merriweather-Regular, Merriweather-Bold;
+
+@font-face {
+    font-family : $icon-font;
+    src         : url('#{$font-url}icons.woff2') format("woff2");
+}
+
+@each $font in $fonts {
+    @font-face {
+        font-family : '#{$font}';
+        src         : url('#{$font-url}#{$font}.woff2') format("woff2");
+    }
+}

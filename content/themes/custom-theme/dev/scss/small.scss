@@ -5,12 +5,12 @@ $critical-css-only : true;
 
 body {
     color       : $body-c;
-    font-family : serif;
+    font-family : "Merriweather-Regular", sans-serif;
 }
 
-.wf-active {
-    body { font-family : "Merriweather", sans-serif; }
-}
+//.wf-active {
+//    body { font-family : "Merriweather", sans-serif; }
+//}
 
 //.nav, .content, footer { opacity : 0; }
 

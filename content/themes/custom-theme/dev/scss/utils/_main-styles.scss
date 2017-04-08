@@ -110,7 +110,11 @@
         font-family    : "Merriweather", serif;
         letter-spacing : 0.01rem;
     }
+    @media only screen and (max-width : 900px) {
+        .post-head.main-header { height : 45vh; }
+    }
     @media only screen and (max-width : 500px) {
+        .post-head.main-header { height : auto; }
         body:not(.post-template) .post-title { font-size : 2.5rem; }
     }
 }

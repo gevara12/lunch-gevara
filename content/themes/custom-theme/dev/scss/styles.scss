@@ -492,10 +492,6 @@ body.nav-opened .site-wrapper {
 
 /* Every post, on every page, gets this style on its <article> tag */
 
-body:not(.post-template) .post-title {
-    font-size : 3.6rem;
-}
-
 body.page-template .post-title {
     font-size : 5rem;
 }
@@ -597,25 +593,6 @@ body.page-template .post-title {
 /* ==========================================================================
    5. Single Post - When you click on an individual post
    ========================================================================== */
-
-.post-template,
-.page-template {
-    .post-header { margin-bottom : 3.4rem; }
-    .post-title { margin-bottom : 0; }
-    .post-meta { margin : 0; }
-    .post-date {
-        padding : 0;
-        margin  : 0;
-        border  : none;
-    }
-    .content { overflow : hidden; }
-    .post {
-        margin-top     : 0;
-        border-bottom  : none;
-        padding-bottom : 0;
-        &:after { display : none; }
-    }
-}
 
 .post-content {
     figure {

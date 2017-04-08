@@ -65,7 +65,7 @@
         position       : relative;
         width          : 80%;
         max-width      : 710px;
-        margin         : 0 auto;
+        margin         : 2.5rem auto;
         padding-bottom : 2.5rem;
         border-bottom  : #ebf2f6 1px solid;
         word-wrap      : break-word;
@@ -110,12 +110,78 @@
         font-family    : "Merriweather", serif;
         letter-spacing : 0.01rem;
     }
+    
+    body:not(.post-template) .post-title {
+        font-size : 3.6rem;
+    }
+    
+    .post-template,
+    .page-template {
+        .post-header { margin-bottom : 3.4rem; }
+        .post-title { margin-bottom : 0; }
+        .post-meta { margin : 0; }
+        .post-date {
+            padding : 0;
+            margin  : 0;
+            border  : none;
+        }
+        .content { overflow : hidden; }
+        .post {
+            margin-top     : 0;
+            border-bottom  : none;
+            padding-bottom : 0;
+            &:after { display : none; }
+        }
+    }
+    
     @media only screen and (max-width : 900px) {
+        h1 {
+            font-size   : 4.5rem;
+            text-indent : -2px;
+        }
+        
+        .post { font-size : 0.95em; }
+        
+        body:not(.post-template) .post-title { font-size : 3.2rem; }
+        
+        .no-cover.post-head.main-header {
+            height  : 55px;
+            padding : 0;
+        }
+        
         .post-head.main-header { height : 45vh; }
+    
+        ol, ul { padding-left : 2em; }
     }
     @media only screen and (max-width : 500px) {
+        h1, h2, h3,
+        h4, h5, h6 { margin : 0 0 0.3em 0; }
+        
+        h1 {
+            font-size      : 2.8rem;
+            letter-spacing : -1px;
+        }
+        
         .post-head.main-header { height : auto; }
         body:not(.post-template) .post-title { font-size : 2.5rem; }
+        .post {
+            width          : auto;
+            margin         : 2rem 16px;
+            padding-bottom : 2rem;
+            line-height    : 1.65em;
+        }
+        
+        .main-header {
+            margin-bottom : 15px;
+            height        : 40vh;
+        }
+        
+        .no-cover.main-header { height : 30vh; }
+        
+        p, ul, ol, dl {
+            font-size : 0.95em;
+            margin    : 0 0 2.5rem 0;
+        }
     }
 }
 
@@ -129,7 +195,6 @@
         color     : $white;
     }
     .page-description { color : rgba(255, 255, 255, 0.8); }
-    .post { margin : 2.5rem auto; }
     .main-nav { display : block; }
     
     .css-tooltip {

@@ -3,14 +3,10 @@
    ========================================================================== */
 
 @media only screen and (max-width : 900px) {
-    
-    blockquote {
-        margin-left : 0;
-    }
+    blockquote { margin-left : 0; }
     
     .main-header {
         box-sizing : border-box;
-        height     : auto;
         min-height : 240px;
         height     : 60vh;
         padding    : 15% 0;
@@ -38,54 +34,23 @@
         line-height : 1.5em;
     }
     
-    .post {
-        font-size : 0.95em
-    }
-    
-    body:not(.post-template) .post-title {
-        font-size : 3.2rem;
-    }
-    
     body.page-template .post-title {
         font-size : 4.5rem;
     }
     
-    hr {
-        margin : 2.4em 0;
-    }
+    hr { margin : 2.4em 0; }
     
-    ol, ul {
-        padding-left : 2em;
-    }
+    h2 { font-size : 3.6rem; }
     
-    h1 {
-        font-size   : 4.5rem;
-        text-indent : -2px;
-    }
+    h3 { font-size : 3.1rem; }
     
-    h2 {
-        font-size : 3.6rem;
-    }
+    h4 { font-size : 2.5rem; }
     
-    h3 {
-        font-size : 3.1rem;
-    }
+    h5 { font-size : 2.2rem; }
     
-    h4 {
-        font-size : 2.5rem;
-    }
+    h6 { font-size : 1.8rem; }
     
-    h5 {
-        font-size : 2.2rem;
-    }
-    
-    h6 {
-        font-size : 1.8rem;
-    }
-    
-    .author-profile {
-        padding-bottom : 4rem;
-    }
+    .author-profile { padding-bottom : 4rem; }
     
     .author-profile .author-bio {
         font-size : 1.6rem;
@@ -100,11 +65,6 @@
     .tag-head.main-header,
     .author-head.main-header {
         height : 30vh;
-    }
-    
-    .no-cover.post-head.main-header {
-        height  : 55px;
-        padding : 0;
     }
     
     .no-cover.author-head.main-header {
@@ -136,15 +96,6 @@
    ========================================================================== */
 
 @media only screen and (max-width : 500px) {
-    
-    .main-header {
-        margin-bottom : 15px;
-        height        : 40vh;
-    }
-    
-    .no-cover.main-header {
-        height : 30vh;
-    }
     
     .paged .main-header {
         max-height : 20vh;
@@ -215,19 +166,7 @@
         margin : 2rem auto;
     }
     
-    .post {
-        width          : auto;
-        margin-top     : 2rem;
-        margin-bottom  : 2rem;
-        margin-left    : 16px;
-        margin-right   : 16px;
-        padding-bottom : 2rem;
-        line-height    : 1.65em;
-    }
-    
-    .post-date {
-        display : none;
-    }
+    .post-date { display : none; }
     
     .post-template .post-header,
     .page-template .post-header {
@@ -239,32 +178,13 @@
         display : inline-block;
     }
     
-    hr {
-        margin : 1.75em 0;
-    }
+    hr { margin : 1.75em 0; }
     
-    p, ul, ol, dl {
-        font-size : 0.95em;
-        margin    : 0 0 2.5rem 0;
-    }
-    
-    .page-title {
-        font-size : 3rem;
-    }
+    .page-title { font-size : 3rem; }
     
     .post-excerpt p { font-size : 0.85em; }
     
     .page-description { font-size : 1.6rem; }
-    
-    h1, h2, h3,
-    h4, h5, h6 {
-        margin : 0 0 0.3em 0;
-    }
-    
-    h1 {
-        font-size      : 2.8rem;
-        letter-spacing : -1px;
-    }
     
     h2 {
         font-size      : 2.4rem;

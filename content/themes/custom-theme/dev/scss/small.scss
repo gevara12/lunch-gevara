@@ -1,6 +1,13 @@
 @import 'utils/vars',
 'utils/mixins';
 
+$icon-font : 'icons';
+
+@font-face {
+    font-family : $icon-font;
+    src         : url('{{asset "fonts/icons.woff2"}}') format("woff2");
+}
+
 $critical-css-only : true;
 
 body {
@@ -8,9 +15,9 @@ body {
     font-family : "Merriweather-Regular", sans-serif;
 }
 
-//.wf-active {
-//    body { font-family : "Merriweather", sans-serif; }
-//}
+.wf-active {
+    body { font-family : "Merriweather", sans-serif; }
+}
 
 //.nav, .content, footer { opacity : 0; }
 

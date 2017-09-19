@@ -52,8 +52,8 @@ gulp.task('styles', function () {
 // Scripts
 gulp.task('scripts', function () {
     return gulp.src([
-        // 'content/themes/custom-theme/dev/js/webfont.js',
-        // 'content/themes/custom-theme/dev/js/small-config.js',
+        'content/themes/custom-theme/dev/js/webfont.js',
+        'content/themes/custom-theme/dev/js/small-config.js',
         'content/themes/custom-theme/dev/js/jquery-1.12.0.min.js',
         'content/themes/custom-theme/dev/js/jquery.fitvids.js',
         'content/themes/custom-theme/dev/js/prism.js',
@@ -71,6 +71,21 @@ gulp.task('scripts', function () {
         .pipe(notify({
             message: 'Scripts compile f'
         }));
+});
+
+var criticalCss = require('gulp-penthouse');
+
+gulp.task('critical-css', function () {
+    return gulp.src(['content/themes/custom-theme/assets/css/small.css', 'content/themes/custom-theme/assets/css/styles.css'])
+        .pipe(criticalCss({
+            out: 'critical.css',
+            url: 'http://localhost:2368',
+            width: 1300,
+            height: 900,
+            strict: true,
+            userAgent: 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
+        }))
+        .pipe(gulp.dest('content/themes/custom-theme/assets/css'));
 });
 
 gulp.task('inject', ['styles'], function () {
